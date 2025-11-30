@@ -1,4 +1,3 @@
-// server.js
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
@@ -34,7 +33,9 @@ app.post("/register", async (req, res) => {
   res.send("<h2>Registration Successful!</h2><a href='/'>Go Back</a>");
 });
 
-// Start server
-app.listen(process.env.PORT, () => {
-  console.log("Server running on http://localhost:" + process.env.PORT);
+// Start Server
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log("Server running on port " + PORT);
 });
